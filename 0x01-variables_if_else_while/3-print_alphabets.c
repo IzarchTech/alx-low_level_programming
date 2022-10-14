@@ -14,7 +14,7 @@ int main(void)
 
 	while (x <= 'z')
 	{
-		x = toLower(x);
+		x = tolower(x);
 		putchar(x);
 		x++;
 	}
