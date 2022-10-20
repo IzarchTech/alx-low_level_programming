@@ -1,6 +1,9 @@
 #include "main.h"
 
-void main(void)
+/**
+ * print_numbers - print numbers, char by char
+ */
+void print_numbers(void)
 {
 	int i = 48;
 
