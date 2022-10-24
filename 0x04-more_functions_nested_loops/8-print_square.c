@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * print_square - print the '#' @n times
- * @n: size
+ * print_square - prints hash squares
+ * @n: size of the square
+ *
+ * Return: void
  */
 print_square(int n)
 {
