@@ -5,13 +5,13 @@
 void rev_string(char *str)
 {
 	int len = 0;
+	int idx = 0;
+	char c;
 
 	for (len = 0; str[len] != '\0'; len++)
 		continue;
 
-	int idx = 0;
 	int r_index = len - 1;
-	char c;
 
 	while (idx != r_index && idx < r_index)
 	{
