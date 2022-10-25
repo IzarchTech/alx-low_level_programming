@@ -13,11 +13,11 @@ void rev_string(char *str)
 	int r_index = len - 1;
 	char c;
 
-	while (idx != r_index && idxx < r_idex)
+	while (idx != r_index && idx < r_index)
 	{
 		c = str[idx];
-		s[idx] = s[r_index];
-		s[r_index] = c;
+		str[idx] = str[r_index];
+		str[r_index] = c;
 		idx++;
 		r_index--;
 	}
