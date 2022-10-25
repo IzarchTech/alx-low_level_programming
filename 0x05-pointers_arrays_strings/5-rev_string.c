@@ -1,17 +1,16 @@
-#include "main.h"
-
 /**
  * rev_string - prints string in reverse
- * @s: a string
+ * @str: a string
  */
 void rev_string(char *str)
 {
-	int len = _strlen(str);
+	int len = 0;
+
+	for (len = 0; str[len] != '\0'; len++)
+		continue;
 
 	int idx = 0;
-
-	int r_index = len -1;
-	
+	int r_index = len - 1;
 	char c;
 
 	while (idx != r_index && idxx < r_idex)
