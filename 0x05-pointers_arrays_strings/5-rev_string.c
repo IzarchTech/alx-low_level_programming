@@ -7,11 +7,12 @@ void rev_string(char *str)
 	int len = 0;
 	int idx = 0;
 	char c;
+	int r_index;
 
 	for (len = 0; str[len] != '\0'; len++)
 		continue;
 
-	int r_index = len - 1;
+	r_index = len - 1;
 
 	while (idx != r_index && idx < r_index)
 	{
