@@ -23,7 +23,6 @@ void print_number(int n)
 	{
 		resp = n / divisor;
 		_putchar('0' + resp);
-
 	}
 
 }
