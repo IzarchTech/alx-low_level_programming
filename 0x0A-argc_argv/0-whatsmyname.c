@@ -12,5 +12,5 @@ int main(int argc, char **argv)
 	printf("%s\n", argv[0]);
 	(void)argc;
 	printf("\n");
-	exit(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
