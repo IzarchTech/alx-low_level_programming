@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * create_array - to create array
  * @size: Required size of the array
