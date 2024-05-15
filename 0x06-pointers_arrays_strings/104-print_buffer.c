@@ -1,44 +1,43 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * print_buffer - function that prints a buffer
- *
- * @b: The buffer
- * @size: The number of bytes to be printed from the buffer.
+ * print_buffer - prints a buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
  */
-
 void print_buffer(char *b, int size)
 {
+	int j, k, l;
 
-	int x, y;
-
-	for (x = 0; x < size; x += 10)
-	{
-		printf("%08x: ", x);
-
-		for (y = 0; y < 10; y++)
-		{
-			if ((y + x) >= size)
-				printf("  ");
-			else
-				printf("%02x", *(b + y + x));
-			if ((y % 2) != 0 && y != 0)
-				printf(" ");
-		}
-		for (y = 0; y < 10; y++)
-		{
-			if ((y + x) >= size)
-				break;
-			else if (*(b + y + x) >= 31 &&
-					*(b + y + x) <= 126)
-				printf("%c", *(b + y + x));
-			else
-				printf(".");
-		}
-		if (x >= size)
-			continue;
-		printf("\n");
-	}
 	if (size <= 0)
 		printf("\n");
+	else
+	{
+		for (j = 0; j < size; j += 10)
+		{
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
+			{
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (l = j; l < j + 10; l++)
+			{
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
+			}
+			printf("\n");
+		}
+	}
 }

@@ -1,32 +1,48 @@
 #include <stdio.h>
+
 /**
- * main - create 2 pairs of number
- * Return: 0
+ * main - Prints numbers between 00 to 99.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i, j;
+int i, e, g, h, op1, op2;
 
-	for (i = 0; i <= 99; i++)
+i = e = g = h = 48;
+while (h < 58)
+{
+	g = 48;
+	while (g < 58)
 	{
-		for (j = i; j <= 99; j++)
+		e = 48;
+		while (e < 58)
 		{
-			if (j != i)
+			i = 48;
+			while (i < 58)
 			{
-				putchar(i / 10 + 48);
-				putchar(i % 10 + 48);
-				putchar(' ');
-				putchar(j / 10 + 48);
-				putchar(j % 10 + 48);
-
-				if (i * 100 + j != 9899)
+				op1 = (h * 10) + g;
+				op2 = (e * 10) + i;
+				if (op1 < op2)
 				{
+					putchar(h);
+					putchar(g);
+					putchar(' ');
+					putchar(e);
+					putchar(i);
+					if (h == 57 && g == 56 && e == 57 && i == 57)
+						break;
 					putchar(',');
 					putchar(' ');
 				}
+				i++;
 			}
+			e++;
 		}
+		g++;
 	}
-	putchar('\n');
-	return (0);
+	h++;
+}
+putchar('\n');
+return (0);
 }

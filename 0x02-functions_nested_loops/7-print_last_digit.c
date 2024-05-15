@@ -1,23 +1,22 @@
 #include "main.h"
 
 /**
- * print_last_digit - last digit
- * @n: is the letter being tested
+ * print_last_digit - prints the last digit of a number
+ * @n: n is an integer
  *
- * Return: Always 4
+ * Description: prints the last digit of a number
+ *
+ * Return: integer
  */
 
 int print_last_digit(int n)
 {
-	int l;
+	int last = n % 10;
 
-	l = n % 10;
-	if (l < 0)
-	{
-		_putchar(-l + 48);
-		return (-l);
-	}
+	if (n < 0)
+		last = last * -1;
 
-		_putchar(l + 48);
-		return (l);
+	_putchar(last + '0');
+
+	return (last);
 }

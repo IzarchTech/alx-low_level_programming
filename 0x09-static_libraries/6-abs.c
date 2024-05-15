@@ -1,16 +1,18 @@
+#include "main.h"
+
 /**
- * _abs - check the code.
- * @n: is the letter being tested
+ * _abs - check the code for Holberton School students.
  *
- * Return: Always 0
+ * @n: is an integer argument
+ *
+ * Return: Always 0.
  */
 
 int _abs(int n)
 {
-
-	if (n < 0)
+	if (n >= 0)
 	{
-		n = -n;
-	}
 		return (n);
+	}
+	return (-n);
 }

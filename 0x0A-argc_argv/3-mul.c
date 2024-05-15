@@ -1,28 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - app entry
- * @argc: argument count
- * @argv: arguments
- * Return: EXIT_SUCCESS or EXIT_FAILURE
+ * main - multiplies two numbers.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int result = 1;
-	int i = 1;
-
-	if (argc < 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
-		exit(EXIT_FAILURE);
+		return (1);
 	}
-
-	while (i < argc)
-	{
-		result *= atoi(argv[i]);
-		i++;
-	}
-	printf("%d\n", result);
-	exit(EXIT_SUCCESS);
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	return (0);
 }

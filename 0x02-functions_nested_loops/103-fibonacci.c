@@ -1,30 +1,32 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
+ * main - prints the sum of all even Fibonacci numbers below 4,000,000
  *
- * Description: Even Liber Abbaci
- *
- *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 
 int main(void)
 {
-	long int n1, n2, fn, afn;
+	long int total_sum, sum, first, second;
 
-	n1 = 1;
-	n2 = 2;
-	fn = afn = 0;
-	while (fn <= 4000000)
+	total_sum = 0;
+	sum = 0;
+	first = 0;
+	second = 1;
+
+	while (sum < 4000000)
 	{
-		fn = n1 + n2;
-		n1 = n2;
-		n2 = fn;
-		if ((n1 % 2) == 0)
+		sum = first + second;
+		if (sum % 2 == 0)
 		{
-			afn += n1;
+			total_sum += sum;
 		}
+		first = second;
+		second = sum;
 	}
-	printf("%ld\n", afn);
+
+	printf("%li\n", total_sum);
+
 	return (0);
 }

@@ -1,50 +1,51 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - Prints the first 98 Fibonacci numbers
+ * main - print the first 98 fibonacci numbers.
  *
- * Return: Always 0.
+ * Return: Nothing.
  */
+
 int main(void)
 {
-	int c, boolean, boolean2;
-	long int n1, n2, fn, fn2, n11, n22;
+	int count;
+	unsigned long x, y, z, a, b, c, carry;
 
-	n1 = 1;
-	n2 = 2;
-	boolean =  boolean2 = 1;
-	printf("%ld, %ld", n1, n2);
-	for (c = 0; c < 96; c++)
+	x = 0;
+	y = 1;
+
+	for (count = 1; count <= 90; count++)
 	{
-		if (boolean)
-		{
-			fn = n1 + n2;
-			printf(", %ld", fn);
-			n1 = n2;
-			n2 = fn;
-		}
-		else
-		{
-			if (boolean2)
-			{
-				n11 = n1 % 1000000000;
-				n22 = n2 % 1000000000;
-				n1 = n1 / 1000000000;
-				n2 = n2 / 1000000000;
-				boolean2 = 0;
-			}
-			fn2 = (n11 + n22);
-			fn = n1 + n2 + (fn2 / 1000000000);
-			printf(", %ld", fn);
-			printf("%ld", fn2 % 1000000000);
-			n1 = n2;
-			n11 = n22;
-			n2 = fn;
-			n22 = (fn2 % 1000000000);
-		}
-		if (((n1 + n2) < 0) && boolean == 1)
-			boolean = 0;
+		z = x + y;
+		x = y;
+		y = z;
+		printf("%lu, ", z);
 	}
-	printf("\n");
+
+	a = x % 1000;
+	x = x / 1000;
+	b = y % 1000;
+	y = y / 1000;
+
+	while (count <= 98)
+	{
+		carry = (a + b) / 1000;
+		c = (a + b) - carry * 1000;
+		z = (x + y) + carry;
+		x = y;
+		y = z;
+		a = b;
+		b = c;
+
+		if (c >= 100)
+			printf("%lu%lu", z, c);
+		else
+			printf("%lu0%lu", z, c);
+		if (count < 98)
+			printf(", ");
+		count++;
+	}
+	putchar('\n');
 	return (0);
 }

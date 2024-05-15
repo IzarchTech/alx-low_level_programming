@@ -1,23 +1,19 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Entry point
+ * main - Prints the alphabet.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char x = 'a';
+	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
+	int i;
 
-	while (x <= 'z')
+	for (i = 0; i < 26; i++)
 	{
-		x = tolower(x);
-		putchar(x);
-		x++;
+		putchar(alp[i]);
 	}
-	{
-		putchar('\n');
-	}
+	putchar('\n');
 	return (0);
 }

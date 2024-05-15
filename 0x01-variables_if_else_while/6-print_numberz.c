@@ -1,19 +1,18 @@
-
-#include<stdio.h>
-#include <ctype.h>
+#include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Prints numbers between 0 to 9.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int x;
+	int i;
 
-	for (x = 0; x < 10; x++)
-		putchar((x % 10) + '0');
-
+	for (i = 48; i < 58; i++)
+	{
+		putchar(i);
+	}
 	putchar('\n');
 	return (0);
 }

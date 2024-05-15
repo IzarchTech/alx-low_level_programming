@@ -1,1 +1,1 @@
-THIS IS MY README ON SINGLY LINK
+this task is about linked list in c

@@ -1,16 +1,24 @@
 #include "main.h"
 
 /**
- * _abs - get the absolute value
- * @n: is the number beign tested
+ * _abs - computes the absolute value of an integer
+ * @n: n is an integer
  *
- * Return: Always 0
+ * Return: integer
  */
+
 int _abs(int n)
 {
-	if (n < 0)
+	if (n > 0)
 	{
-		n *= -1;
+		return (n);
 	}
-	return (n);
+	else if (n < 0)
+	{
+		return (-n);
+	}
+	else
+	{
+		return (n);
+	}
 }

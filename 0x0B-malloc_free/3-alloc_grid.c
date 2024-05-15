@@ -1,50 +1,45 @@
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * **alloc_grid - 2 dimensional array of integers
- *@width: with of the grid
- *@height: height of the grid
- *Return: 0 (success)
+ * **alloc_grid - creates a two dimensional array of ints
+ * @width: width of the matrix
+ * @height: height of the matrix
+ *
+ * Return: pointer to the created matrix (Success)
+ * or NULL (Error)
  */
 int **alloc_grid(int width, int height)
 {
-	int **grid;
-	int i, j, k, l;
+	int **arr;
+	int i, j;
 
-	/**verify if with or height is 0*/
-	if (width <= 0 || height <= 0)
+	if (height <= 0 || width <= 0)
 		return (NULL);
 
-	/**asign size*/
-	grid = malloc(height * sizeof(int *));
+	arr = (int **) malloc(sizeof(int *) * height);
 
-	/**verify if my pointer is null*/
-	if (grid == NULL)
+	if (arr == NULL)
 		return (NULL);
 
-	/**Modify the size*/
 	for (i = 0; i < height; i++)
 	{
-		grid[i] = malloc(width * sizeof(int));
-		if (grid[i] == NULL)
+		arr[i] = (int *) malloc(sizeof(int) * width);
+		if (arr[i] == NULL)
 		{
-			for (j = 0; j < i; j++)
-			{
-				free(grid[j]);
-			}
-			free(grid);
+			free(arr);
+			for (j = 0; j <= i; j++)
+				free(arr[j]);
 			return (NULL);
 		}
 	}
 
-	/**fill the grid*/
-	for (k = 0; k < height; k++)
+	for (i = 0; i < height; i++)
 	{
-		for (l = 0; l < width; l++)
+		for (j = 0; j < width; j++)
 		{
-			grid[k][l] = 0;
+			arr[i][j] = 0;
 		}
 	}
-
-	return (grid);
+	return (arr);
 }

@@ -1,1 +1,1 @@
-My readme on Doubly Linked list in C programming
+ C Singly linked list task

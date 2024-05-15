@@ -1,17 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main - app entry
- * @argc: argument count
- * @argv: arguments
- * Return: 0
+ * main - prints all arguments it receives.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	while (argc--)
-	{
-		printf("%s\n", *argv++);
-	}
-	exit(EXIT_SUCCESS);
+	int i;
+
+	for (i = 0; i < argc; i++)
+		printf("%s\n", argv[i]);
+	return (0);
 }

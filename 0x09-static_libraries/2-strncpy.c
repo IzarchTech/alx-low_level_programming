@@ -1,21 +1,31 @@
-/**
- * _strncpy - concatenates two strings,
- * @n: number of bytes to concatinate from source.
- * @dest: destination.
- * @src: source.
- * Return: the pointer to dest.
- */
+#include "main.h"
 
+/**
+ * _strncpy - copies a string
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes to copy
+ *
+ * Return: pointer to the resulting string
+ */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int x;
+	int i;
 
-	for (x = 0; x < n && src[x] != '\0'; x++)
+	i = 0;
 
-		dest[x] = src[x];
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
 
-	for ( ; x < n; x++)
-		dest[x] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 
 	return (dest);
 }
+

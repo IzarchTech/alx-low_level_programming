@@ -1,1 +1,1 @@
-My readme On Bit Manupulations
+my bit manipulation task
